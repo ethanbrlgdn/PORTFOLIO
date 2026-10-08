@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ethantzy — Ethan Borlagdan | Full Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of Ethan Borlagdan (Ethantzy), IT student and aspiring Full Stack Developer from Bay, Laguna.">
+    <script>
+        /* Apply saved theme before first paint (dark by default) */
+        try { document.documentElement.dataset.theme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark' } catch (e) { }
+        document.documentElement.classList.add('js');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- Background layers (decorative) -->
+    <div class="bg" aria-hidden="true">
+        <div class="grid"></div>
+        <span class="px cross" style="top:18%;left:8%;--d:-18"></span>
+        <span class="px cross" style="top:62%;left:91%;--d:22"></span>
+        <span class="px ring" style="top:72%;left:6%;--d:30"></span>
+        <span class="px tri" style="top:12%;left:78%;--d:-26"></span>
+        <span class="px hline" style="top:40%;--d:12"></span>
+        <span class="px vline" style="left:50%;--d:-8"></span>
+    </div>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+
+    <header class="nav" id="top">
+        <div class="wrap nav-in">
+            <a class="logo" href="#home">ethantzy<i>.</i></a>
+            <nav id="menu" aria-label="Main">
+                <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+                <a href="#projects">Projects</a><a href="#tools">Tools</a><a href="#contact">Contact</a>
+            </nav>
+            <button class="theme" id="theme" type="button" aria-label="Switch between dark and light mode"><span
+                    class="knob"></span></button>
+            <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="menu"><span></span><span></span></button>
+        </div>
+        <div class="progress"></div>
+    </header>
+
+    <main id="main">
+
+        <!-- HOME -->
+        <section id="home" class="hero wrap">
+            <div class="hero-text">
+                <p class="meta">IT student · Bay, Laguna</p>
+                <h1 id="name" aria-label="Ethantzy">Ethantzy</h1>
+                <p class="role">Full Stack Developer <span>(in progress)</span></p>
+                <p class="quote">“A guy that can’t be moved.”</p>
+                <p class="lede">Always learning, always building. I’m an IT student working toward full stack
+                    development, and I like making websites, apps, and systems, then making them a little better each
+                    time.</p>
+                <div class="btns">
+                    <a class="btn primary" href="#projects">View Projects</a>
+                    <a class="btn" href="#contact">Contact Me</a>
+                </div>
+            </div>
+
+            <figure class="photo" data-depth="10">
+                <div class="photo-box">
+                    <!-- To add your photo: delete the <span> below and use
+           <img src="assets/profile/ethan.jpg" alt="Portrait of Ethan Borlagdan"> -->
+                    <img src="assets/ethan.jpg" alt="Portrait of Ethan Borlagdan">
+                </div>
+                <figcaption>fig. 01 — portrait</figcaption>
+            </figure>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="wrap sec">
+            <h2 class="reveal">About</h2>
+            <div class="about reveal">
+                <p>I’m Ethan, a college IT student who got hooked on programming and never really stopped. I’m
+                    interested in software development, web development, and databases, and most of what I know came
+                    from building small things, breaking them, and fixing them.</p>
+                <dl class="facts">
+                    <div>
+                        <dt>Full name</dt>
+                        <dd>Ethan Borlagdan</dd>
+                    </div>
+                    <div>
+                        <dt>Display name</dt>
+                        <dd>Ethantzy</dd>
+                    </div>
+                    <div>
+                        <dt>Role</dt>
+                        <dd>Full Stack Developer</dd>
+                    </div>
+                    <div>
+                        <dt>Location</dt>
+                        <dd>Bay, Laguna</dd>
+                    </div>
+                    <div>
+                        <dt>Email</dt>
+                        <dd><a href="mailto:ethanborlagdan131@gmail.com">ethanborlagdan131@gmail.com</a></dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="wrap sec">
+            <h2 class="reveal">Skills</h2>
+            <div class="skills">
+                <div class="sk reveal">
+                    <h3>Web</h3>
+                    <ul class="chips">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div class="sk reveal">
+                    <h3>Programming</h3>
+                    <ul class="chips">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C</li>
+                        <li>C#</li>
+                        <li>COBOL</li>
+                    </ul>
+                </div>
+                <div class="sk reveal">
+                    <h3>Database</h3>
+                    <ul class="chips">
+                        <li>SQL</li>
+                        <li>PL/pgSQL</li>
+                    </ul>
+                </div>
+                <div class="sk soft reveal">
+                    <h3>Soft skills</h3>
+                    <ul class="chips alt">
+                        <li>Leadership</li>
+                        <li>Collaboration</li>
+                        <li>Creativity</li>
+                        <li>Decision-Making</li>
+                        <li>Multitasking</li>
+                        <li>Resourcefulness</li>
+                        <li>Reliability</li>
+                        <li>Open-Mindedness</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="wrap sec">
+            <h2 class="reveal">Projects</h2>
+            <p class="sub reveal">Major work first, then smaller school activities.</p>
+
+            <div class="majors">
+                <!-- To add links later, put <a class="card-link" href="URL">GitHub</a> inside a card's .card-links div -->
+                <article class="card major wide reveal" data-preview="assets/projects/calajuan.jpg">
+                    <div class="card-top"><span>Mobile / Software / Research</span><span class="st live">2026 · In
+                            progress</span></div>
+                    <h3>CalaJuan — A Mobile Tourism Guide and Recommendation System</h3>
+                    <p>A mobile tourism guide and recommendation system that helps users discover tourism destinations
+                        and the establishments around them.</p>
+                    <ul class="chips">
+                        <li>Technologies to be finalized</li>
+                    </ul>
+                    <p class="role"><b>Role</b> Developer / Researcher</p>
+                    <div class="card-links"></div>
+                </article>
+
+                <article class="card major reveal" data-preview="assets/projects/pokedex.jpg">
+                    <div class="card-top"><span>Web / Software</span><span class="st">2026 · Completed</span></div>
+                    <h3>Pokémon Pokédex</h3>
+                    <p>A Pokédex web application built with a Java Spring Boot backend and a MySQL database, using data
+                        from PokeAPI.</p>
+                    <ul class="chips">
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>MySQL</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>PokeAPI</li>
+                    </ul>
+                    <p class="role"><b>Role</b> Developer</p>
+                    <div class="card-links"></div>
+                </article>
+
+                <article class="card major reveal" data-preview="assets/projects/bloodlink.jpg">
+                    <div class="card-top"><span>Web / School</span><span class="st">2026 · Completed</span></div>
+                    <h3>BloodLink</h3>
+                    <p>A school web project built with plain HTML, CSS, and JavaScript.</p>
+                    <ul class="chips">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <p class="role"><b>Role</b> Developer</p>
+                    <div class="card-links"></div>
+                </article>
+
+                <article class="card major reveal" data-preview="assets/projects/fcfs.jpg">
+                    <div class="card-top"><span>Terminal / Command-line</span><span class="st">2025 · Completed</span>
+                    </div>
+                    <h3>FCFS CPU Scheduling</h3>
+                    <p>A command-line program written in C that works through First-Come, First-Served CPU scheduling.
+                    </p>
+                    <ul class="chips">
+                        <li>C</li>
+                    </ul>
+                    <p class="role"><b>Role</b> Developer</p>
+                    <div class="card-links"></div>
+                </article>
+            </div>
+
+            <h3 class="minor-title reveal">Minor projects &amp; activities</h3>
+            <div class="minors">
+                <article class="card mini reveal">
+                    <div class="card-top"><span>Web / Database</span><span class="st">2026 · Completed</span></div>
+                    <h4>Laravel Product Management System</h4>
+                    <ul class="chips">
+                        <li>Laravel</li>
+                        <li>PHP</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </article>
+                <article class="card mini reveal">
+                    <div class="card-top"><span>Database design</span><span class="st">2026 · Completed</span></div>
+                    <h4>Online Store Database System</h4>
+                    <ul class="chips">
+                        <li>PostgreSQL</li>
+                        <li>SQL</li>
+                        <li>dbdiagram.io</li>
+                    </ul>
+                    <p class="focus">ERD, relationships, primary and foreign keys, normalization (1NF–3NF)</p>
+                </article>
+                <article class="card mini reveal">
+                    <div class="card-top"><span>Database</span><span class="st">2026 · Completed</span></div>
+                    <h4>Student Enrollment Database</h4>
+                    <ul class="chips">
+                        <li>PostgreSQL</li>
+                        <li>SQL</li>
+                    </ul>
+                    <p class="focus">Students, subjects, enrollments, relationships, constraints</p>
+                </article>
+                <article class="card mini reveal">
+                    <div class="card-top"><span>Database</span><span class="st">2026 · Completed</span></div>
+                    <h4>DBA — Transactions, Functions &amp; Triggers</h4>
+                    <ul class="chips">
+                        <li>PostgreSQL</li>
+                        <li>SQL</li>
+                        <li>PL/pgSQL</li>
+                    </ul>
+                    <p class="focus">Transactions, functions, triggers</p>
+                </article>
+                <article class="card mini reveal">
+                    <div class="card-top"><span>Database / Performance</span><span class="st">2026 · Completed</span>
+                    </div>
+                    <h4>Indexed, View-Based &amp; Optimized Queries</h4>
+                    <ul class="chips">
+                        <li>PostgreSQL</li>
+                        <li>SQL</li>
+                    </ul>
+                    <p class="focus">Indexes, views, materialized views, <code>EXPLAIN ANALYZE</code></p>
+                </article>
+                <article class="card mini reveal">
+                    <div class="card-top"><span>Web / School</span><span class="st">2026 · Completed</span></div>
+                    <h4>PHP Form &amp; Session System</h4>
+                    <ul class="chips">
+                        <li>HTML</li>
+                        <li>PHP</li>
+                        <li>CSS</li>
+                    </ul>
+                    <p class="focus">POST forms, validation, arrays, loops, sessions</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- TOOLS -->
+        <section id="tools" class="wrap sec">
+            <h2 class="reveal">Tools &amp; Applications</h2>
+            <div class="tree reveal">
+                <div><b>office/</b><span>Microsoft Word<i>/</i>Excel<i>/</i>PowerPoint<i>/</i>Access</span></div>
+                <div><b>design/</b><span>Figma<i>/</i>Canva<i>/</i>CapCut</span></div>
+                <div><b>dev/</b><span>Visual Studio Code<i>/</i>Git<i>/</i>GitHub<i>/</i>GitHub
+                        Pages<i>/</i>Postman</span></div>
+                <div><b>database/</b><span>pgAdmin 4<i>/</i>PostgreSQL / SQL Shell (psql)<i>/</i>MySQL Workbench</span>
+                </div>
+                <div><b>other/</b><span>Google Docs<i>/</i>Sheets<i>/</i>Forms<i>/</i>Drive<i>/</i>Discord</span></div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="wrap sec">
+            <h2 class="reveal">Contact</h2>
+            <div class="contact">
+                <div class="reveal">
+                    <p class="cname">Ethan Borlagdan</p>
+                    <p class="muted">Ethantzy · Bay, Laguna</p>
+                    <p><a class="mail" href="mailto:ethanborlagdan131@gmail.com">ethanborlagdan131@gmail.com</a></p>
+                    <p class="links"><a href="https://github.com/ethanbrlgdn" target="_blank"
+                            rel="noopener">GitHub</a><a href="https://www.facebook.com/ethan.borlagdan.2025" target="_blank"
+                            rel="noopener">Facebook</a></p>
+                    <a class="btn primary" href="assets/Ethan-Borlagdan-Resume.pdf" download>Download Resume</a>
+                </div>
+                <!-- Static site: replace YOUR_FORM_ID with a Formspree (or similar) form ID to make this work -->
+                <form class="reveal" id="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                    <label>Name<input name="name" type="text" autocomplete="name" required></label>
+                    <label>Email<input name="email" type="email" autocomplete="email" required></label>
+                    <label>Message<textarea name="message" rows="4" required></textarea></label>
+                    <button class="btn primary" type="submit">Send message</button>
+                    <p class="note" id="note" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="wrap foot">
+        <p>© 2026 Ethantzy — Ethan Borlagdan</p>
+        <p><a href="https://github.com/ethanbrlgdn" target="_blank" rel="noopener">GitHub</a><a
+                href="https://www.facebook.com/ethan.borlagdan.2025" target="_blank" rel="noopener">Facebook</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
