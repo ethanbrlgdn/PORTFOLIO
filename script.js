@@ -133,3 +133,53 @@ if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
     addEventListener('scroll', () => { if (current) place(current); }, { passive: true });
 }
+
+/* ---- Intro: name decodes while a line fills, then the screen splits open ---- */
+(() => {
+    const intro = $('#intro');
+    const ready = () => {
+        root.classList.add('ready');
+        $$('.hero-text > *').forEach((el, i) => el.style.animationDelay = (500 + i * 90) + 'ms');
+    };
+    if (reduce || !intro) { if (intro) intro.remove(); ready(); return; }
+    document.body.style.overflow = 'hidden';
+
+    const word = 'Ethantzy', pool = '01{}<>/;#$%&*';
+    const nameEl = $('#iname'), count = $('#icount');
+    nameEl.innerHTML = [...word].map(() => '<span>0</span>').join('') + '<i>.</i>';
+    const letters = $$('span', nameEl);
+    const rnd = () => pool[Math.floor(Math.random() * pool.length)];
+
+    let done = false, finishing = false, lastFrame = -1;
+    let loaded = document.readyState === 'complete';
+    addEventListener('load', () => loaded = true);
+
+    const lift = () => {
+        if (done) return; done = true;
+        letters.forEach((l, i) => { l.textContent = word[i]; l.className = 'l'; });
+        count.textContent = '100';
+        intro.style.setProperty('--ip', 1);
+        intro.classList.add('split');
+        ready();
+        document.body.style.overflow = '';
+        setTimeout(() => intro.remove(), 1700);
+    };
+
+    const DUR = 1600, t0 = performance.now();
+    const tick = now => {
+        if (done) return;
+        const t = now - t0, p = Math.min(t / DUR, 1), e = 1 - Math.pow(1 - p, 3);
+        intro.style.setProperty('--ip', e);
+        count.textContent = String(Math.round(e * 100)).padStart(3, '0');
+        const frame = Math.floor(t / 60);
+        letters.forEach((l, i) => {
+            if (t > 450 + i * 130) { if (l.className !== 'l') { l.textContent = word[i]; l.className = 'l'; } }
+            else if (frame !== lastFrame) l.textContent = rnd();
+        });
+        lastFrame = frame;
+        if (p >= 1 && loaded && !finishing) { finishing = true; setTimeout(lift, 300); }
+        requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    setTimeout(lift, 5000); // safety: never block the page
+})();

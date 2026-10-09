@@ -1030,3 +1030,199 @@ form .btn {
     height: 100%;
     object-fit: cover
 }
+
+/* ===== Intro / page-load transition ===== */
+.intro {
+    display: none
+}
+
+.js .intro {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    --ip: 0;
+    animation: introFail 0s 6s forwards
+}
+
+.ip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50.3%;
+    background: var(--bg);
+    transition: transform .95s cubic-bezier(.77, 0, .18, 1)
+}
+
+.ip-top {
+    top: 0
+}
+
+.ip-bot {
+    bottom: 0
+}
+
+.split .ip-top {
+    transform: translateY(-101%)
+}
+
+.split .ip-bot {
+    transform: translateY(101%)
+}
+
+.i-seam {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: var(--acc);
+    transform: scaleX(var(--ip));
+    transition: opacity .3s
+}
+
+.split .i-seam {
+    opacity: 0
+}
+
+.i-center {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 1rem;
+    transition: opacity .45s .5s, transform .45s .5s
+}
+
+.i-name {
+    font: 500 clamp(2.2rem, 9vw, 5rem)/1 var(--mono);
+    letter-spacing: -.02em;
+    color: var(--mute);
+    white-space: nowrap
+}
+
+.i-name span {
+    display: inline-block
+}
+
+.i-name .l {
+    color: var(--ink)
+}
+
+.i-name i {
+    font-style: normal;
+    color: var(--acc)
+}
+
+.i-sub {
+    font: .75rem var(--mono);
+    color: var(--mute);
+    letter-spacing: .1em;
+    text-transform: uppercase
+}
+
+.i-sub b {
+    color: var(--acc);
+    font-weight: 500;
+    margin: 0 .3em
+}
+
+.i-corner {
+    position: absolute;
+    padding: 1.25rem 1.5rem;
+    font: .72rem var(--mono);
+    letter-spacing: .08em;
+    color: var(--mute);
+    animation: introIn .6s .15s both;
+    transition: opacity .3s
+}
+
+.tl {
+    top: 0;
+    left: 0
+}
+
+.tr {
+    top: 0;
+    right: 0
+}
+
+.bl {
+    bottom: 0;
+    left: 0
+}
+
+.br {
+    bottom: 0;
+    right: 0
+}
+
+.split .i-center {
+    opacity: 0;
+    transform: translateY(-12px)
+}
+
+.split .i-corner {
+    opacity: 0;
+    animation: none
+}
+
+@keyframes introIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px)
+    }
+}
+
+@keyframes introFail {
+    to {
+        visibility: hidden
+    }
+}
+
+/* hero content waits, then rises in once the curtains open */
+.js:not(.ready) .hero-text>*,
+.js:not(.ready) .photo {
+    opacity: 0
+}
+
+.ready .hero-text>* {
+    animation: heroIn .8s cubic-bezier(.2, .8, .2, 1) both
+}
+
+.ready .photo {
+    animation: heroFade 1s .45s both
+}
+
+@keyframes heroIn {
+    from {
+        opacity: 0;
+        transform: translateY(22px)
+    }
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0
+    }
+}
+
+@media(max-width:600px) {
+
+    .i-corner.tl,
+    .i-corner.tr {
+        display: none
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .js .intro {
+        display: none
+    }
+
+    .js:not(.ready) .hero-text>*,
+    .js:not(.ready) .photo {
+        opacity: 1
+    }
+}
